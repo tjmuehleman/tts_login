@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @blog.user_id %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @blog.subject %>
+</p>
+
+<p>
+  <strong>Entry:</strong>
+  <%= @blog.entry %>
+</p>
+
+<p>
+  <strong># of Entries:</strong>
+  <%= @blog.num_entries %>
+</p>
+
+This blog's entries:
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Blog</th>
+      <th>Subject</th>
+      <th>Category</th>
+      <th></th>
+      <th></th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blog_entries.each do |blog_entry| %>
+      <tr>
+        <td><%= blog_entry.user_id %></td>
+        <td><%= blog_entry.blog_id %></td>
+        <td><%= blog_entry.subject %></td>
+        <td><%= blog_entry.category %></td>
+        <td><%= link_to 'Show', blog_entry %></td>
+        <td><%= link_to 'Edit', edit_blog_entry_path(blog_entry) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Back', blogs_path %>

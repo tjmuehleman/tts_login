@@ -1,0 +1,35 @@
+<h1>Listing blog_entries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Blog</th>
+      <th>Entry</th>
+      <th>Subject</th>
+      <th>Category</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blog_entries.each do |blog_entry| %>
+      <tr>
+        <td><%= blog_entry.user_id %></td>
+        <td><%= blog_entry.blog_id %></td>
+        <td><%= blog_entry.entry %></td>
+        <td><%= blog_entry.subject %></td>
+        <td><%= blog_entry.category %></td>
+        <td><%= link_to 'Show', blog_entry %></td>
+        <td><%= link_to 'Edit', edit_blog_entry_path(blog_entry) %></td>
+        <td><%= link_to 'Destroy', blog_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Blog entry', new_blog_entry_path %>
