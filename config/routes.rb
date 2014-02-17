@@ -1,5 +1,7 @@
 Testlogin::Application.routes.draw do
 
+  resources :blog_comments
+
   root 'welcome#index'
 
   get "welcome/index"

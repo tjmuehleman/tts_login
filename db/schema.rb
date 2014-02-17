@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140213142052) do
+ActiveRecord::Schema.define(version: 20140217133319) do
+
+  create_table "blog_comments", force: true do |t|
+    t.text     "entry_text"
+    t.integer  "user_id"
+    t.integer  "blog_entry_id"
+    t.date     "entry_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "blog_entries", force: true do |t|
     t.integer  "user_id"

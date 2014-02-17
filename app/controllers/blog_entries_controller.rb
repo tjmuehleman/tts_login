@@ -14,6 +14,14 @@ class BlogEntriesController < ApplicationController
   def show
     @blog = @blog_entry.blog
     @user = @blog_entry.user
+
+    #@awesome_comments = @blog_entry.blog_comments
+
+    
+    @last_comment = @blog_entry.blog_comments.last
+    # display the LAST comment for a given 
+    # blog entry
+
   end
 
   # GET /blog_entries/new

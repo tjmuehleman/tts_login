@@ -25,5 +25,40 @@
   <%= @blog_entry.category %>
 </p>
 
+<% if @last_comment != nil %>
+
+<h2>Listing all comments!</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Entry text</th>
+      <th>User</th>
+      <th>Blog entry</th>
+      <th>Entry date</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+   
+      <tr>
+        <td><%= @last_comment.entry_text %></td>
+        <td><%= @last_comment.user_id %></td>
+        <td><%= @last_comment.blog_entry_id %></td>
+        <td><%= @last_comment.entry_date %></td>
+        
+      </tr>
+  </tbody>
+</table>
+<% else %>
+  Sorry, no comments! 
+
+<% end %>
+<br>
+
+<%= link_to 'New Blog comment', new_blog_comment_path %>
+
+
+
 <%= link_to 'Edit', edit_blog_entry_path(@blog_entry) %> |
 <%= link_to 'Back', blog_entries_path %>
