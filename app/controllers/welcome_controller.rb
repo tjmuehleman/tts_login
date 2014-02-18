@@ -7,4 +7,12 @@ class WelcomeController < ApplicationController
 
   def contact
   end
+
+  def login
+  	@user = User.new
+  end
+
+  def login_user
+
+  end
 end

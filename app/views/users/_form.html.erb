@@ -13,11 +13,23 @@
 
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.email_field :email %>
+    <!--    <input id="user_email" name="user[email]" type="text" /> -->
+
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+    <!--    <input id="user_email" name="user[email]" type="text" /> -->
+
   </div>
   <div class="field">
     <%= f.label :bio %><br>
     <%= f.text_area :bio %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.telephone_field :phone %>
   </div>
   <div class="field">
     <%= f.label :first_name %><br>

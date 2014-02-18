@@ -4,6 +4,8 @@ Testlogin::Application.routes.draw do
 
   root 'welcome#index'
 
+  get "welcome/login"
+  post "welcome/login_user"
   get "welcome/index"
   get "welcome/about"
   get "welcome/contact"

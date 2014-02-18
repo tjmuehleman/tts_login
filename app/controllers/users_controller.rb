@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :blogs]
 
+
+  # add new field to User resource
+  # called phone number
+
   # GET /users
   # GET /users.json
   def index
@@ -42,6 +46,11 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+
+    # update phone
+    @user.phone = number_to_phone(:phone)
+
+    @user.save
 
     respond_to do |format|
       if @user.save
